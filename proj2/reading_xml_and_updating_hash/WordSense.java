@@ -15,4 +15,10 @@ public class WordSense
 {
 	public String word;
 	public String sense;
+	
+	public WordSense()
+	{
+		word="";
+		sense="";
+	}
 }
