@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.*;
 
+import edu.washington.cs.knowitall.morpha.MorphaStemmer;
+import uk.ac.susx.informatics.Morpha;
 import weka.core.Stopwords;
 
 public class Dictionary {
@@ -24,6 +26,11 @@ public class Dictionary {
 		for(String word:Context){
 		  System.out.println(word);
         }
+		//Lemmatize the words in the context list
+		Context = Lemmatize(Context);
+		for(String word:Context){
+			  System.out.println(word);
+	    }
     }
 	
 	static List<String> PatternMatch(BufferedReader br) throws IOException{
@@ -79,5 +86,16 @@ public class Dictionary {
 		return ContextWords1;
 		
 	 }
+	
+	static List<String> Lemmatize(List<String>ContextWords) {
+		List<String> ContextWords1 = new ArrayList<String>();
+		for(String word:ContextWords){
+			new MorphaStemmer();
+	 	    String morpha = MorphaStemmer.morpha(word,false);
+			ContextWords1.add(morpha);
+	 	}
+		return ContextWords1;
+		
+	}
 	
 }
