@@ -1,10 +1,10 @@
-package com.cornell;
+package com.cornell.edu;
 
 import java.io.IOException;
-import javax.xml.parsers.ParserConfigurationException;
-import org.xml.sax.SAXException;
 
-import com.cornell.dictionaryHash;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
 
 public class dict
 {

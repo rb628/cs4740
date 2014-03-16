@@ -5,4 +5,4 @@
  * @author yashaswinis
  *
  */
-package com.cornell;
+package com.cornell.edu;

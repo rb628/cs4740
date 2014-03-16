@@ -1,4 +1,4 @@
-package com.cornell;
+package com.cornell.edu;
 	
 
 public class WordSense 

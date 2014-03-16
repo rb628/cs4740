@@ -1,4 +1,4 @@
-package com.cornell;
+package com.cornell.edu;
 	
 import java.io.BufferedReader;
 import java.io.File;
@@ -16,8 +16,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
-import com.cornell.WordSense;
 
 import edu.washington.cs.knowitall.morpha.MorphaStemmer;
 
@@ -50,6 +48,7 @@ public class dictionaryHash
 			Element wordElement = (Element) allEntries.item(x);
             
 			wordsenseArray[entryNo].word = (String)wordElement.getAttribute("item");
+			System.out.println("Word"+wordsenseArray[entryNo].GetWord());
 			
 			NodeList senseList = wordElement.getElementsByTagName("sense");
 			
@@ -73,19 +72,15 @@ public class dictionaryHash
 				DictLemmatizedWords=Lemmatize(DictMinusStopWords);
 				
 				System.out.println("After Lemma is "+DictLemmatizedWords);
-				System.out.println("Sense is "+wordsenseArray[entryNo].word);
+				
+				System.out.println("Sense is "+wordsenseArray[entryNo].GetSense());
 				dictionaryMap.put(wordsenseArray[entryNo], DictLemmatizedWords);
 				entryNo++;	
 			    
 			}
-			 
-		}
-		for (Map.Entry entry : dictionaryMap.entrySet()) {
-		    System.out.print("key,val: ");
-		    //System.out.println((entry.getKey()).GetWord() + "," + entry.GetSense());
-		}
-
 		
+		}
+			
 	}
 	
 	public void ReadData(String filename) throws IOException{
